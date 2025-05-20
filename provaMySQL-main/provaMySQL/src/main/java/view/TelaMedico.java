@@ -10,7 +10,7 @@ package view;
  */
 public class TelaMedico extends javax.swing.JFrame {
 
-}
+
     /**
      * Creates new form CadastroMedico
      */
