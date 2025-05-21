@@ -78,12 +78,13 @@ public class PacienteDAO {
     }
      
       public void atualizar(Paciente paciente) {
-        String sql = "UPDATE paciente SET nomePaciente = ?, cpf = ?, telefone = ? WHERE id = ?";
+        String sql = "UPDATE paciente SET nomePaciente = ?, cpf = ?, telefone = ? WHERE idPaciente = ?";
         try (Connection conn = ConexaoMySQL.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, paciente.getNomePaciente());
             stmt.setString(2, paciente.getCpf());
-            stmt.setInt(3, paciente.getIdPaciente());
+            stmt.setString(3, paciente.getTelefone());
+            stmt.setInt(4, paciente.getIdPaciente());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
