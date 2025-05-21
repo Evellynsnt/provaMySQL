@@ -1,5 +1,4 @@
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\dao\ConsultaDAO.java
-C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\ConexaoMySQL\ConexaoMySQL.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\controller\PacienteController.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\dao\PacienteDAO.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\view\TelaMedico.java
@@ -7,6 +6,7 @@ C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\dao\Medico
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\model\Consulta.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\model\Medico.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\view\TelaConsulta.java
+C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\conexao\ConexaoMySQL.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\controller\ConsultaController.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\view\TelaPaciente.java
 C:\Users\aluno.den\Documents\provaMySQL-main\provaMySQL\src\main\java\model\Paciente.java

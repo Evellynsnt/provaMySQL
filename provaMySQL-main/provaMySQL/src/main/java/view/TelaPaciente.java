@@ -31,7 +31,7 @@ public class TelaPaciente extends javax.swing.JFrame {
      */
     public TelaPaciente() {
         initComponents();
-        tabela = (DefaultTableModel) tabPacientes.getModel();
+        tabela = (DefaultTableModel) TabelaPaciente.getModel();
         atualizaTabela();
     }
 
@@ -44,133 +44,171 @@ public class TelaPaciente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnVoltar = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        btnAlterar = new javax.swing.JButton();
-        btnCadastrar = new javax.swing.JButton();
+        getModel = new javax.swing.JPanel();
+        txtNome = new javax.swing.JLabel();
+        txtCpf = new javax.swing.JLabel();
+        txtTelefone = new javax.swing.JLabel();
+        insereNome = new javax.swing.JTextField();
+        insereCPF = new javax.swing.JTextField();
+        insereTelefone = new javax.swing.JTextField();
+        btCadastrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnRemover = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btRemover = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TabelaPaciente = new javax.swing.JTable();
+        btAlterar = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setText("NOME:");
+        txtNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtNome.setText("NOME:");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("CPF:");
+        txtCpf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtCpf.setText("CPF:");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("TELEFONE:");
+        txtTelefone.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtTelefone.setText("TELEFONE:");
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        insereNome.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        insereNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                insereNomeActionPerformed(evt);
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        insereCPF.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        insereCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                insereCPFActionPerformed(evt);
             }
         });
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-
-        btnAlterar.setText("ALTERAR");
-        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+        insereTelefone.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        insereTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarActionPerformed(evt);
+                insereTelefoneActionPerformed(evt);
             }
         });
 
-        btnCadastrar.setText("CADASTRAR");
+        btCadastrar.setText("CADASTRAR");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("CADASTRAMENTO DO PACIENTE");
+        jLabel1.setText("CADASTRO DO PACIENTE");
 
-        btnRemover.setText("REMOVER");
-        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+        btRemover.setText("REMOVER");
+        btRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoverActionPerformed(evt);
+                btRemoverActionPerformed(evt);
             }
         });
 
-        jButton4.setText("VOLTAR");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        TabelaPaciente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "NOME", "CPF", "TELEFONE"
+            }
+        ));
+        jScrollPane1.setViewportView(TabelaPaciente);
+
+        btAlterar.setText("ALTERAR");
+        btAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btAlterarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout btnVoltarLayout = new javax.swing.GroupLayout(btnVoltar);
-        btnVoltar.setLayout(btnVoltarLayout);
-        btnVoltarLayout.setHorizontalGroup(
-            btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnVoltarLayout.createSequentialGroup()
-                .addGroup(btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(btnVoltarLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(btnVoltarLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField4))
-                            .addGroup(btnVoltarLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField3))
-                            .addGroup(btnVoltarLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(btnVoltarLayout.createSequentialGroup()
-                                .addComponent(btnAlterar)
-                                .addGap(42, 42, 42)
-                                .addComponent(btnRemover)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCadastrar)
-                                .addGap(23, 23, 23))))
-                    .addGroup(btnVoltarLayout.createSequentialGroup()
+        btVoltar.setText("VOLTAR");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
+        btAtualizar.setText("ATUALIZAR");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout getModelLayout = new javax.swing.GroupLayout(getModel);
+        getModel.setLayout(getModelLayout);
+        getModelLayout.setHorizontalGroup(
+            getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(getModelLayout.createSequentialGroup()
+                .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(getModelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton4)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addComponent(btVoltar))
+                    .addGroup(getModelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(getModelLayout.createSequentialGroup()
+                                .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(getModelLayout.createSequentialGroup()
+                                        .addComponent(txtTelefone)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(insereTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(getModelLayout.createSequentialGroup()
+                                        .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtCpf)
+                                            .addComponent(txtNome))
+                                        .addGap(29, 29, 29)
+                                        .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(insereNome, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(insereCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(29, 29, 29))))
+                    .addGroup(getModelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btAlterar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btRemover)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btAtualizar))
+                    .addGroup(getModelLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        btnVoltarLayout.setVerticalGroup(
-            btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnVoltarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        getModelLayout.setVerticalGroup(
+            getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(getModelLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtNome)
+                    .addComponent(insereNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrar)
-                    .addComponent(btnRemover)
-                    .addComponent(btnAlterar))
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(insereCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCpf))
+                .addGap(6, 6, 6)
+                .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insereTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefone))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(getModelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btCadastrar)
+                    .addComponent(btAlterar)
+                    .addComponent(btRemover)
+                    .addComponent(btAtualizar))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,14 +217,14 @@ public class TelaPaciente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(getModel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(getModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -195,16 +233,17 @@ public class TelaPaciente extends javax.swing.JFrame {
 
     private void insereNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insereNomeActionPerformed
         // TODO add your handling code here:
+        insereNome.requestFocus();
     }//GEN-LAST:event_insereNomeActionPerformed
 
     private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
         // TODO add your handling code here:
-    int linha = tabPacientes.getSelectedRow();
+    int linha = TabelaPaciente.getSelectedRow();
         if (linha != -1){
             try{
                 
                 // O ID continua o mesmo
-                int idPaciente = (int) tabPacientes.getValueAt(linha, 0);
+                int idPaciente = (int) TabelaPaciente.getValueAt(linha, 0);
                 // Novos valores
                 String novoNomePaciente = insereNome.getText();
                 String novoCpf = insereCPF.getText();
@@ -235,11 +274,11 @@ public class TelaPaciente extends javax.swing.JFrame {
 
     private void btRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRemoverActionPerformed
         // TODO add your handling code here:
-        int linha = tabPacientes.getSelectedRow();
+        int linha = TabelaPaciente.getSelectedRow();
         if (linha != -1){
             try{
                 // ID
-                int id = (int) tabPacientes.getValueAt(linha, 0);
+                int id = (int) TabelaPaciente.getValueAt(linha, 0);
                 // Exibe a caixa de diálogo com as opções "Sim" e "Não"
                 int resposta = JOptionPane.showConfirmDialog(
                 null, 
@@ -264,33 +303,61 @@ public class TelaPaciente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btRemoverActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        dispose();
+        TelaLogin v = new TelaLogin();
+        v.setVisible(true);
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         // TODO add your handling code here:
-        // Pegar os inputs do usuário
-        String nome = insereNome.getText();
+        String nomePaciente = insereNome.getText();
         String cpf = insereCPF.getText();
         String telefone = insereTelefone.getText();
-        // Enviar ao controlador
-        pacienteController.cadastrar(nome, cpf, telefone);
-        atualizaTabela();
+
+    if (nomePaciente.isEmpty() || cpf.isEmpty() || telefone.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
+    } else {
+        boolean sucesso = pacienteController.cadastrar(nomePaciente, cpf, telefone);
+
+        if (sucesso) {
+            JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso!");
+            atualizaTabela(); // atualiza JTable com os novos dados
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar paciente.");
+            }
+        }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void tabPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabPacientesMouseClicked
         // TODO add your handling code here:
-        int linha = tabPacientes.getSelectedRow();
+        int linha = TabelaPaciente.getSelectedRow();
         if (linha != -1) {
-            String novoNome = (String) tabPacientes.getValueAt(linha, 1);
-            String novoCPF = (String) tabPacientes.getValueAt(linha, 2);
-            String novoTelefone = (String) tabPacientes.getValueAt(linha, 3);
+            String novoNome = (String) TabelaPaciente.getValueAt(linha, 1);
+            String novoCPF = (String) TabelaPaciente.getValueAt(linha, 2);
+            String novoTelefone = (String) TabelaPaciente.getValueAt(linha, 3);
             insereNome.setText(novoNome);
             insereCPF.setText(novoCPF);
             insereTelefone.setText(novoTelefone);
         }
     }//GEN-LAST:event_tabPacientesMouseClicked
+
+    private void insereCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insereCPFActionPerformed
+        // TODO add your handling code here:
+       insereCPF.requestFocus();
+    }//GEN-LAST:event_insereCPFActionPerformed
+
+    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
+        // TODO add your handling code here:
+        atualizaTabela();
+    }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void insereTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insereTelefoneActionPerformed
+        // TODO add your handling code here:
+        insereTelefone.requestFocus();
+    }//GEN-LAST:event_insereTelefoneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,6 +385,13 @@ public class TelaPaciente extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -328,17 +402,20 @@ public class TelaPaciente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAlterar;
-    private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnRemover;
-    private javax.swing.JPanel btnVoltar;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTable TabelaPaciente;
+    private javax.swing.JButton btAlterar;
+    private javax.swing.JButton btAtualizar;
+    private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btRemover;
+    private javax.swing.JButton btVoltar;
+    private javax.swing.JPanel getModel;
+    private javax.swing.JTextField insereCPF;
+    private javax.swing.JTextField insereNome;
+    private javax.swing.JTextField insereTelefone;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel txtCpf;
+    private javax.swing.JLabel txtNome;
+    private javax.swing.JLabel txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

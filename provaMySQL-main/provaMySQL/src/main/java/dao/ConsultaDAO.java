@@ -1,7 +1,7 @@
 
 package dao;
 
-import ConexaoMySQL.ConexaoMySQL;
+import conexao.ConexaoMySQL;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;

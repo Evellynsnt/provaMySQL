@@ -9,14 +9,14 @@ package view;
  * @author evellynsantospinto
  */
 public class TelaMedico extends javax.swing.JFrame {
-
+    DefaultTableModel modelo;
 
     /**
      * Creates new form CadastroMedico
      */
     public TelaMedico() {
         initComponents();
-
+    modelo = (DefaultTableModel) jTable1.getModel();
     }
 
     /**
@@ -30,20 +30,19 @@ public class TelaMedico extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        CampusID = new javax.swing.JTextField();
-        CampusNome = new javax.swing.JTextField();
-        CampusEspecialidade = new javax.swing.JTextField();
-        CampusCRM = new javax.swing.JTextField();
+        insereNome = new javax.swing.JTextField();
+        insereEspecialidade = new javax.swing.JTextField();
+        insereCRM = new javax.swing.JTextField();
         NomeCRM = new javax.swing.JLabel();
         NomeNome = new javax.swing.JLabel();
-        NomeID = new javax.swing.JLabel();
         NomeEspecialidade = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        TabelaMedico = new javax.swing.JTable();
+        btAlterar = new javax.swing.JButton();
+        btRemover = new javax.swing.JButton();
+        btCadastrar = new javax.swing.JButton();
+        btCancelar = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,32 +50,21 @@ public class TelaMedico extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("CADASTRAMENTO DO MÉDICO");
 
-        CampusID.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        CampusID.setText("Insira seu id");
-        CampusID.addActionListener(new java.awt.event.ActionListener() {
+        insereNome.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        insereNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampusIDActionPerformed(evt);
+                insereNomeActionPerformed(evt);
             }
         });
 
-        CampusNome.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        CampusNome.setText("Insira seu nome");
-        CampusNome.addActionListener(new java.awt.event.ActionListener() {
+        insereEspecialidade.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        insereEspecialidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampusNomeActionPerformed(evt);
+                insereEspecialidadeActionPerformed(evt);
             }
         });
 
-        CampusEspecialidade.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        CampusEspecialidade.setText("Informe sua especialidade");
-        CampusEspecialidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampusEspecialidadeActionPerformed(evt);
-            }
-        });
-
-        CampusCRM.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        CampusCRM.setText("Insira seu crm");
+        insereCRM.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
 
         NomeCRM.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         NomeCRM.setText("CRM:");
@@ -84,13 +72,10 @@ public class TelaMedico extends javax.swing.JFrame {
         NomeNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         NomeNome.setText("NOME:");
 
-        NomeID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        NomeID.setText("ID:");
-
         NomeEspecialidade.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         NomeEspecialidade.setText("ESPECIALIDADE:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaMedico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -101,98 +86,110 @@ public class TelaMedico extends javax.swing.JFrame {
                 "ID", "NOME", "CRM", "ESPECIALIDADE"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TabelaMedico);
 
-        jButton1.setText("ALTERAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btAlterar.setText("ALTERAR");
+        btAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btAlterarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("REMOVER");
+        btRemover.setText("REMOVER");
 
-        jButton3.setText("CADASTRAR");
+        btCadastrar.setText("CADASTRAR");
+        btCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadastrarActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("VOLTAR");
+        btCancelar.setText("CANCELAR");
+        btCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarActionPerformed(evt);
+            }
+        });
+
+        btVoltar.setText("VOLTAR");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(NomeEspecialidade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampusEspecialidade))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
+                                .addComponent(NomeEspecialidade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(insereEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(NomeNome)
-                                    .addComponent(NomeCRM)
-                                    .addComponent(NomeID))
-                                .addGap(29, 29, 29))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CampusID)
-                            .addComponent(CampusNome)
-                            .addComponent(CampusCRM)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(17, 17, 17))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(NomeCRM))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(insereNome, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                                    .addComponent(insereCRM)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btAlterar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btRemover)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btCancelar)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btVoltar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeID)
-                    .addComponent(CampusID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeNome)
-                    .addComponent(CampusNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(insereNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NomeNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomeCRM)
-                    .addComponent(CampusCRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(insereCRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomeEspecialidade)
-                    .addComponent(CampusEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(insereEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(btAlterar)
+                    .addComponent(btRemover)
+                    .addComponent(btCadastrar)
+                    .addComponent(btCancelar))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -201,35 +198,68 @@ public class TelaMedico extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CampusNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampusNomeActionPerformed
+    private void insereNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insereNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampusNomeActionPerformed
+        String nome = insereNome.getText();
+        String crm = insereCRM.getText();
+        String especialidade = insereEspecialidade.getText();
 
-    private void CampusIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampusIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampusIDActionPerformed
+        if(nome.isEmpty() || crm.isEmpty() || especialidade.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    private void CampusEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampusEspecialidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampusEspecialidadeActionPerformed
+        // Adiciona uma nova linha na tabela
+        modelo.addRow(new Object[]{nome, crm, especialidade});
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  
+    }//GEN-LAST:event_insereNomeActionPerformed
+
+    private void insereEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insereEspecialidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        dispose();
+        TelaMedico m = new TelaMedico();
+        m.setVisible(true);
+    }//GEN-LAST:event_insereEspecialidadeActionPerformed
+
+    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaMedico m = new TelaMedico();
+        m.setVisible(true);
+    }//GEN-LAST:event_btAlterarActionPerformed
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaLogin l = new TelaLogin();
+        l.setVisible(true);
+    }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        TelaLogin l = new TelaLogin();
+        l.setVisible(true);
+    }//GEN-LAST:event_btCancelarActionPerformed
+
+    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,21 +298,20 @@ public class TelaMedico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CampusCRM;
-    private javax.swing.JTextField CampusEspecialidade;
-    private javax.swing.JTextField CampusID;
-    private javax.swing.JTextField CampusNome;
     private javax.swing.JLabel NomeCRM;
     private javax.swing.JLabel NomeEspecialidade;
-    private javax.swing.JLabel NomeID;
     private javax.swing.JLabel NomeNome;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTable TabelaMedico;
+    private javax.swing.JButton btAlterar;
+    private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btCancelar;
+    private javax.swing.JButton btRemover;
+    private javax.swing.JButton btVoltar;
+    private javax.swing.JTextField insereCRM;
+    private javax.swing.JTextField insereEspecialidade;
+    private javax.swing.JTextField insereNome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

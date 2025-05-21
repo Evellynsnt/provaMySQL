@@ -44,7 +44,6 @@ public class TelaLogin extends javax.swing.JFrame {
         TituloInicio.setText("AGENDAMENTO DE CONSULTAS");
 
         btnCadastrarPaciente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCadastrarPaciente.setForeground(new java.awt.Color(255, 102, 102));
         btnCadastrarPaciente.setText("CADASTRAR");
         btnCadastrarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,7 +52,6 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         btnCadastrarMedico.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCadastrarMedico.setForeground(new java.awt.Color(255, 102, 102));
         btnCadastrarMedico.setText("CADASTRAR");
         btnCadastrarMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +60,6 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         btnBotaoConsulta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnBotaoConsulta.setForeground(new java.awt.Color(255, 102, 102));
         btnBotaoConsulta.setText("CONSULTAR");
         btnBotaoConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +72,6 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel4.setText("CONSULTA");
 
         btnCancelarBusca.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnCancelarBusca.setForeground(new java.awt.Color(255, 102, 102));
         btnCancelarBusca.setText("CANCELAR");
         btnCancelarBusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,6 +174,9 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnCancelarBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarBuscaActionPerformed
         // TODO add your handling code here:
+        dispose();
+        TelaConsulta b = new TelaConsulta();
+        b.setVisible(true);
     }//GEN-LAST:event_btnCancelarBuscaActionPerformed
 
     /**
