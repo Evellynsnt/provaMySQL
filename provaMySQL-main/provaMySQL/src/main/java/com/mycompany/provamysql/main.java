@@ -1,6 +1,6 @@
 
 
-package com.mycompany.provaMySQL;
+package com.mycompany.mydbl;
 
 import view.TelaLogin;
 
